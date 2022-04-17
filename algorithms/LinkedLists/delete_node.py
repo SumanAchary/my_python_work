@@ -35,7 +35,7 @@ def deleteNode(head, pos):
     # Write your code here.
     _length = length(head)
     if _length < pos or pos < 0:
-        return head
+    return head
 
     if pos == 0:
         # only when  the length of the linked list is greater than 0
