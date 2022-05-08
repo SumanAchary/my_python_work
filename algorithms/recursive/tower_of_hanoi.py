@@ -10,4 +10,4 @@ def towerofhanoi(n, source, aux, dest):
 
 
 n = int(input())
-towerofhanoi(n, 'a', 'b', 'c')
+towerofhanoi(n, "a", "b", "c")

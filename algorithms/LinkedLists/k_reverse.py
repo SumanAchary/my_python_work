@@ -45,9 +45,9 @@ Sample Output 2 :
 40 30 20 10 """
 from sys import stdin
 
-#Following is the Node class already written for the Linked List
-class Node :
-    def __init__(self, data) :
+# Following is the Node class already written for the Linked List
+class Node:
+    def __init__(self, data):
         self.data = data
         self.next = None
 
@@ -55,27 +55,28 @@ class Node :
 def reverse(h):
     if h is None:
         return None, None
-    
+
     prev, cur = None, h
     while cur is not None:
         forw = cur.next
         cur.next = prev
         prev = cur
         cur = forw
-        
+
     return prev, h
 
-def kReverse(head, k) :
-	#Your code goes here
+
+def kReverse(head, k):
+    # Your code goes here
     if head is None or head.next is None:
         return head
-    
+
     h1, t1 = head, head
     index = 0
     while index < k - 1 and t1.next is not None:
         t1 = t1.next
         index += 1
-        
+
     h2 = t1.next
     t1.next = None
     h1, t1 = reverse(h1)
@@ -84,49 +85,23 @@ def kReverse(head, k) :
     return h1
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Taking Input Using Fast I/O
-def takeInput() :
+# Taking Input Using Fast I/O
+def takeInput():
     head = None
     tail = None
 
     datas = list(map(int, stdin.readline().rstrip().split(" ")))
 
     i = 0
-    while (i < len(datas)) and (datas[i] != -1) :
+    while (i < len(datas)) and (datas[i] != -1):
         data = datas[i]
         newNode = Node(data)
 
-        if head is None :
+        if head is None:
             head = newNode
             tail = newNode
 
-        else :
+        else:
             tail.next = newNode
             tail = newNode
 
@@ -135,22 +110,20 @@ def takeInput() :
     return head
 
 
+def printLinkedList(head):
 
-
-def printLinkedList(head) :
-
-    while head is not None :
-        print(head.data, end = " ")
+    while head is not None:
+        print(head.data, end=" ")
         head = head.next
 
     print()
 
 
-#main
+# main
 t = int(stdin.readline().rstrip())
 
-while t > 0 :
-    
+while t > 0:
+
     head = takeInput()
     k = int(stdin.readline().strip())
 

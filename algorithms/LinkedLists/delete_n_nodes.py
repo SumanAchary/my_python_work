@@ -46,16 +46,15 @@ For the second query, we delete three nodes after every two nodes, resulting in 
 
 from sys import stdin
 
-#Following is the Node class already written for the Linked List
-class Node :
-    def __init__(self, data) :
+# Following is the Node class already written for the Linked List
+class Node:
+    def __init__(self, data):
         self.data = data
         self.next = None
 
 
-
-def skipMdeleteN(head, M, N) :
-	#Your code goes here
+def skipMdeleteN(head, M, N):
+    # Your code goes here
     if head is None:
         return head
     if M == 0:
@@ -64,58 +63,39 @@ def skipMdeleteN(head, M, N) :
     prev = None
     cnt = 0
     while temp is not None:
-        if(cnt == M):
+        if cnt == M:
             break
         cnt += 1
         prev = temp
         temp = temp.next
     cnt = 0
     while temp is not None:
-        if(cnt == N):
+        if cnt == N:
             break
         cnt += 1
         temp = temp.next
-        
+
     prev.next = skipMdeleteN(temp, M, N)
     return head
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Taking Input Using Fast I/O
-def takeInput() :
+# Taking Input Using Fast I/O
+def takeInput():
     head = None
     tail = None
 
     datas = list(map(int, stdin.readline().rstrip().split(" ")))
 
     i = 0
-    while (i < len(datas)) and (datas[i] != -1) :
+    while (i < len(datas)) and (datas[i] != -1):
         data = datas[i]
         newNode = Node(data)
 
-        if head is None :
+        if head is None:
             head = newNode
             tail = newNode
 
-        else :
+        else:
             tail.next = newNode
             tail = newNode
 
@@ -124,22 +104,20 @@ def takeInput() :
     return head
 
 
+def printLinkedList(head):
 
-
-def printLinkedList(head) :
-
-    while head is not None :
-        print(head.data, end = " ")
+    while head is not None:
+        print(head.data, end=" ")
         head = head.next
 
     print()
 
 
-#main
+# main
 t = int(stdin.readline().rstrip())
 
-while t > 0 :
-    
+while t > 0:
+
     head = takeInput()
     m_n = stdin.readline().strip().split(" ")
 

@@ -1,4 +1,4 @@
-def last_index(arr,target):
+def last_index(arr, target):
     l = len(arr)
     if l == 0:
         return -1
@@ -10,6 +10,7 @@ def last_index(arr,target):
         if arr[0] == target:
             return 0
         else:
-            return - 1
+            return -1
 
-print(last_index([3,2,5,8,1,2,332,2,4,3,3,1,1],8))
+
+print(last_index([3, 2, 5, 8, 1, 2, 332, 2, 4, 3, 3, 1, 1], 8))

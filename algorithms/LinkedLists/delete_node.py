@@ -11,8 +11,9 @@ def length(head):
         head = head.next
     return count
 
-def insert(head,position,data):
-    if position<0 or position>length(head):
+
+def insert(head, position, data):
+    if position < 0 or position > length(head):
         return head
     count = 0
     curr = head
@@ -29,6 +30,7 @@ def insert(head,position,data):
         head = new_node
     new_node.next = curr
     return head
+
 
 # this is the implemented function definition
 def deleteNode(head, pos):
@@ -81,13 +83,13 @@ def print_linked_list(head):
     if head is None:
         return head
     while head is not None:
-        print(head.data,end=' --> ')
+        print(head.data, end=" --> ")
         head = head.next
 
 
 head = take_input()
 print(print_linked_list(head))
-insert(head,4,45)
+insert(head, 4, 45)
 print("AFTER INSERTING 45 @ 4th position")
 print(print_linked_list(head))
 print("AFTER DELETING @ 3th position")

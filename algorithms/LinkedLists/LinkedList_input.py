@@ -3,6 +3,7 @@ class Node:
         self.data = data
         self.next = None
 
+
 # this is the implemented function definition
 def take_input():
     input_list = [int(ele) for ele in input().split()]

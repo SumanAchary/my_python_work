@@ -16,6 +16,8 @@ def removeDuplicates(head):
             current = current.next
 
     return head
+
+
 def findNode(head, n):
     count = 0
     found = False
@@ -28,6 +30,8 @@ def findNode(head, n):
     if found:
         return count
     return -1
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -110,12 +114,12 @@ def print_linked_list(head):
     if head is None:
         return head
     while head is not None:
-        print(head.data, end=' --> ')
+        print(head.data, end=" --> ")
         head = head.next
 
 
 head = take_input()
 print(print_linked_list(head))
-appendLastNToFirst(head,3)
+appendLastNToFirst(head, 3)
 print("AFTER append last @ 3 position")
 print(print_linked_list(head))

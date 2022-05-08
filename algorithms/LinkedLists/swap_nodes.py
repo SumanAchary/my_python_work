@@ -43,79 +43,50 @@ Sample Output 1 :
 90 80 90 25 65 85 70 """
 from sys import stdin
 
-#Following is the Node class already written for the Linked List
-class Node :
-    def __init__(self, data) :
+# Following is the Node class already written for the Linked List
+class Node:
+    def __init__(self, data):
         self.data = data
         self.next = None
 
 
-
-def swapNodes(head, i, j) :
-	#Your code goes here
+def swapNodes(head, i, j):
+    # Your code goes here
     if head is None:
         return head
-    k = max(i,j)
+    k = max(i, j)
     temp = head
-    #temp2 = head
-    count=0
-    while(count<=k):
-        if(count==i):
+    # temp2 = head
+    count = 0
+    while count <= k:
+        if count == i:
             d1 = temp
-        if(count==j):
+        if count == j:
             d2 = temp
         temp = temp.next
-        count+=1
-    
-    d1.data,d2.data = d2.data,d1.data
+        count += 1
+
+    d1.data, d2.data = d2.data, d1.data
     return head
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Taking Input Using Fast I/O
-def takeInput() :
+# Taking Input Using Fast I/O
+def takeInput():
     head = None
     tail = None
 
     datas = list(map(int, stdin.readline().rstrip().split(" ")))
 
     i = 0
-    while (i < len(datas)) and (datas[i] != -1) :
+    while (i < len(datas)) and (datas[i] != -1):
         data = datas[i]
         newNode = Node(data)
 
-        if head is None :
+        if head is None:
             head = newNode
             tail = newNode
 
-        else :
+        else:
             tail.next = newNode
             tail = newNode
 
@@ -124,22 +95,20 @@ def takeInput() :
     return head
 
 
+def printLinkedList(head):
 
-
-def printLinkedList(head) :
-
-    while head is not None :
-        print(head.data, end = " ")
+    while head is not None:
+        print(head.data, end=" ")
         head = head.next
 
     print()
 
 
-#main
+# main
 t = int(stdin.readline().rstrip())
 
-while t > 0 :
-    
+while t > 0:
+
     head = takeInput()
     i_j = stdin.readline().strip().split(" ")
 

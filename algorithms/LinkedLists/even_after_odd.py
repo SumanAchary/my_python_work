@@ -28,79 +28,62 @@ Sample Output 1 :
 
 from sys import stdin
 
-#Following is the Node class already written for the Linked List
-class Node :
-    def __init__(self, data) :
+# Following is the Node class already written for the Linked List
+class Node:
+    def __init__(self, data):
         self.data = data
         self.next = None
 
 
 def evenAfterOdd(head):
-     oddh=None
-     oddt=None
-     evenh=None
-     event=None 
-     curr=head
-     while(curr is not None):
-        newnode=Node(curr.data)
-        if((curr.data)%2!=0):
-            if(oddh==None):
-                oddh=newnode
-                oddt=newnode
+    oddh = None
+    oddt = None
+    evenh = None
+    event = None
+    curr = head
+    while curr is not None:
+        newnode = Node(curr.data)
+        if (curr.data) % 2 != 0:
+            if oddh == None:
+                oddh = newnode
+                oddt = newnode
             else:
-                oddt.next=newnode
-                oddt=newnode
+                oddt.next = newnode
+                oddt = newnode
         else:
-            if(evenh==None):
-                evenh=newnode
-                event=newnode
+            if evenh == None:
+                evenh = newnode
+                event = newnode
             else:
-                event.next=newnode
-                event=newnode
-        curr=curr.next
-     if(oddh is not None):
-         oddt.next=evenh
-         head=oddh
-     else:
-         head=evenh
+                event.next = newnode
+                event = newnode
+        curr = curr.next
+    if oddh is not None:
+        oddt.next = evenh
+        head = oddh
+    else:
+        head = evenh
 
-     return head
-
-
+    return head
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Taking Input Using Fast I/O
-def takeInput() :
+# Taking Input Using Fast I/O
+def takeInput():
     head = None
     tail = None
 
     datas = list(map(int, stdin.readline().rstrip().split(" ")))
 
     i = 0
-    while (i < len(datas)) and (datas[i] != -1) :
+    while (i < len(datas)) and (datas[i] != -1):
         data = datas[i]
         newNode = Node(data)
 
-        if head is None :
+        if head is None:
             head = newNode
             tail = newNode
 
-        else :
+        else:
             tail.next = newNode
             tail = newNode
 
@@ -109,23 +92,23 @@ def takeInput() :
     return head
 
 
-#to print the linked list 
-def printLinkedList(head) :
+# to print the linked list
+def printLinkedList(head):
 
-    while head is not None :
-        print(head.data, end = " ")
+    while head is not None:
+        print(head.data, end=" ")
         head = head.next
 
     print()
 
 
-#main
+# main
 t = int(stdin.readline().rstrip())
 
-while t > 0 :
-    
+while t > 0:
+
     head = takeInput()
     newHead = evenAfterOdd(head)
-    printLinkedList(newHead)  
-    
+    printLinkedList(newHead)
+
     t -= 1

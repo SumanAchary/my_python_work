@@ -11,6 +11,7 @@ def length(head):
         head = head.next
     return count
 
+
 # this is the implemented function definition
 def deleteNodeRec(head, pos):
     if head is None:
@@ -62,7 +63,7 @@ def print_linked_list(head):
     if head is None:
         return head
     while head is not None:
-        print(head.data, end=' --> ')
+        print(head.data, end=" --> ")
         head = head.next
 
 

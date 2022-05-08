@@ -1,4 +1,4 @@
-def reverseLinkedListRec(head) :
+def reverseLinkedListRec(head):
     if head is None or head.next is None:
         return head
     small_head = reverseLinkedListRec(head.next)
@@ -9,16 +9,16 @@ def reverseLinkedListRec(head) :
     head.next = None
     return small_head
 
+
 # optimized
-def reverseLinkedListRec2(head) :
+def reverseLinkedListRec2(head):
     if head is None or head.next is None:
-        return head,head
+        return head, head
 
     smallHead, smallTail = reverseLinkedListRec2(head.next)
     smallTail.next = head
     head.next = None
-    return smallHead,smallTail
-
+    return smallHead, smallTail
 
 
 # boiler plate for LL
@@ -26,6 +26,7 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+
 
 def take_input():
     input_list = [int(ele) for ele in input().split()]
@@ -48,7 +49,7 @@ def print_linked_list(head):
     if head is None:
         return head
     while head is not None:
-        print(head.data, end=' --> ')
+        print(head.data, end=" --> ")
         head = head.next
 
 

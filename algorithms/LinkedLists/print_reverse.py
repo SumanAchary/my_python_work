@@ -36,12 +36,13 @@ class Node:
         self.data = data
         self.next = None
 
+
 # this is the implemented function definition
 def printReverse(head):
     if head is None:
         return None
     printReverse(head.next)
-    print(head.data, end=' ')
+    print(head.data, end=" ")
 
 
 def appendLastNToFirst(head, n):
@@ -120,7 +121,7 @@ def print_linked_list(head):
     if head is None:
         return head
     while head is not None:
-        print(head.data, end=' --> ')
+        print(head.data, end=" --> ")
         head = head.next
 
 

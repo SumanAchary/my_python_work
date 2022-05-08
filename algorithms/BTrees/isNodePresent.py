@@ -8,9 +8,3 @@ def isNodePresent(root, x):
         return True
     res2 = isNodePresent(root.right, x)
     return res2
-
-
-
-
-
-

@@ -1,6 +1,7 @@
 # "array": [-1, -5, -10, -1100, -1100, -1101, -1102, -9001]
 # just return true or false, if the the array is not increasing or decreasing
 
+
 def isMonotonic(array):
     isNonDecreasing = True
     isNonIncreasing = True
