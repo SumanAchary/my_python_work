@@ -1,6 +1,5 @@
 from algorithms.BTrees.BTree import BinaryTreeNode
 
-
 def mirror(root):
     if root == None:
         return None
